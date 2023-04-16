@@ -43,6 +43,7 @@ var stageState = {
                 else if(tile === 4){
                     this.coin = game.add.sprite(x + 25, y + 25, 'coin');
                     this.coin.anchor.set(.5);
+                    game.physics.arcade.enable(this.coin);
                 }
                 else if(tile === 3){
                     var position = {
@@ -67,6 +68,11 @@ var stageState = {
 
     update: function(){
         game.physics.arcade.collide(this.player,this.blocks);
+
+        if(game.physics.arcade.overlap(this.player, this.coin, this.getEnd, null, this)){
+            this.coin.body.velocity.x = 120;
+        }
+
         this.movePlayer();
     },
 
@@ -122,5 +128,9 @@ var stageState = {
     newPosition: function(){
         var pos = this.blockPositions[Math.floor(Math.random() * this.blockPositions.length)];
         return pos;
+    },
+
+    getEnd: function(){
+        game.state.start('end');
     }
 };

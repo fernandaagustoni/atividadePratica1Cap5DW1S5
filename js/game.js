@@ -4,7 +4,6 @@ game.state.add('boot', bootState);
 game.state.add('load', loadState);
 game.state.add('menu', menuState);
 game.state.add('stage', stageState);
-game.state.add('stage2', stage2State);
 game.state.add('end', endState);
 
 game.state.start('boot');
