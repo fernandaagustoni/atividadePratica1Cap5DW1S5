@@ -21,6 +21,10 @@ var loadState = {
         //Carregamento dos audios
         game.load.audio('getitem', 'songs/getitem.ogg');
         game.load.audio('loseitem', 'songs/loseitem.ogg');
-        game.load.audio('music', 'songs/music.ogg');
+        game.load.audio("music", ["songs/music.mp3"]);
+    },
+
+    create: function(){
+        game.state.start('menu');
     }
 };

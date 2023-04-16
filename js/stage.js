@@ -1,1 +1,5 @@
-var stageState = {};
+var stageState = {
+    create: function(){
+        alert();
+    }
+};
