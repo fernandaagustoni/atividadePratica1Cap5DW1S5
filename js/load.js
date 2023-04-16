@@ -16,12 +16,15 @@ var loadState = {
         //Carregamento de Spritesheet
         game.load.spritesheet('coin', 'img/coin.png', 32,32);
         game.load.spritesheet('enemy', 'img/enemy1.png', 150,90);
-        game.load.spritesheet('player', 'img/player1.png', 49,64);
+        game.load.spritesheet('player', 'img/player.png', 24,32);
 
         //Carregamento dos audios
         game.load.audio('getitem', 'songs/getitem.ogg');
         game.load.audio('loseitem', 'songs/loseitem.ogg');
-        game.load.audio("music", ["songs/music.mp3"]);
+        game.load.audio('music', 'songs/music.mp3');
+
+        game.physics.startSystem(Phaser.Physics.ARCADE);
+
     },
 
     create: function(){

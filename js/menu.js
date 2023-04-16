@@ -27,4 +27,6 @@ var menuState = {
         this.music.stop();
         game.state.start('stage');
     }
+
+    
 };
