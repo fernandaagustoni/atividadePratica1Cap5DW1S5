@@ -1,5 +1,7 @@
 var stageState = {
     create: function(){
+        this.onGame = true;
+
         game.add.sprite(0,0,'bg');
 
         this.maze = [
@@ -64,16 +66,33 @@ var stageState = {
         //Controle de jogo
         this.controls = game.input.keyboard.createCursorKeys();
 
+        //Timer
+        this.time = 0;
+        this.txtTimer = game.add.text(game.world.width - 15,15, 'TIME: ' + this.getText(this.time),{font: '15px New Roman', fill: '#fff'});
+        this.txtTimer.anchor.set(1,0);
+        this.timer = game.time.events.loop(1000, function(){
+            this.time++;
+            this.txtTimer.text = 'TIME: ' + this.getText(this.time);
+        },this);
+
     },
 
+    getText: function(value){
+		return value.toString();
+	},
+
+
     update: function(){
-        game.physics.arcade.collide(this.player,this.blocks);
+        if(this.onGame){
+            game.physics.arcade.collide(this.player,this.blocks);
+            
 
-        if(game.physics.arcade.overlap(this.player, this.coin, this.getEnd, null, this)){
-            this.coin.body.velocity.x = 120;
+            if(game.physics.arcade.overlap(this.player, this.coin, this.getEnd, null, this)){
+                this.coin.body.velocity.x = 120;
+            }
+    
+            this.movePlayer();
         }
-
-        this.movePlayer();
     },
 
     //Função para movimentação do Player
@@ -131,6 +150,7 @@ var stageState = {
     },
 
     getEnd: function(){
+        this.onGame = false;
         game.state.start('end');
     }
 };
