@@ -1,5 +1,6 @@
 var stageState = {
     create: function(){
+        
         this.onGame = true;
 
         game.add.sprite(0,0,'bg');

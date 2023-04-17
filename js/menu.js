@@ -1,18 +1,15 @@
 var menuState = {
     create: function(){
-		this.music = game.add.audio('music');
-		this.music.loop = true;
-		this.music.volume = .5;
-		this.music.play();
-
-        var txtMaze = game.add.text(game.world.centerX, 150, 'Maze Game', {font: '40px Times New Roman', fill: '#fff'});
+        var txtMaze = game.add.text(game.world.centerX, 100, 'Maze Game', {font: '40px Times New Roman', fill: '#fff'});
+        var txtHistory = game.add.text(game.world.centerX, 200, 'Ajude a Maria se formar' + '\n\nApertando as SETAS DO TECLADO você poderá levar a MARIA\naté o final do caminho, até o seu tão esperado diploma.', {font: '15px Times New Roman', fill: '#fff'});
         var txtPressStart = game.add.text(game.world.centerX, 550, 'PRESS START', {font: '20px Times New Roman', fill: '#fff'});
-        
+
         txtMaze.anchor.set(.5);
         txtPressStart.anchor.set(.5);
+        txtHistory.anchor.set(.5);
 
         //Recurso do Phaser para criar o efeito
-        game.add.tween(txtPressStart).to({y:250},1000).start();
+        game.add.tween(txtPressStart).to({y:300},1000).start();
 
         //Aguarda o texto de start para permitir pressionar enter
         game.time.events.add(1000, function(){
@@ -24,7 +21,6 @@ var menuState = {
     },
 
     startGame: function(){
-        this.music.stop();
         game.state.start('stage');
     }
 

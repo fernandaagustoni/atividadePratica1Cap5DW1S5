@@ -1,7 +1,7 @@
 var endState = {
 	create: function(){
 
-		var txtThanks = game.add.text(game.world.centerX,200,'THANKS FOR PLAYING',{font:'60px Times New Roman',fill:'#fff'});
+		var txtThanks = game.add.text(game.world.centerX,200,'THANKS FOR PLAYING',{font:'50px Times New Roman',fill:'#fff'});
         txtThanks.anchor.set(.5);
 		
 		var txtPressStart = game.add.text(game.world.centerX,250,'PRESS START',{font:'20px Times New Roman',fill:'#f00'});
