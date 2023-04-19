@@ -21,5 +21,14 @@ O jogo deve conter:
 <p>
 O jogo deve ser visualmente atraente e responsivo em diferentes tamanhos de tela.
 Utilize recursos do HTML5 e CSS3 para criar animações e transições suaves, e utilize JavaScript para criar a lógica do jogo e controlar as interações do jogador.
+<p align="center">
+<br>
+Instruções:
+<br>
+Neste jogo você controla a personagem Maria com as setas do teclado pelo labirinto até encontrar o diploma/capelo, o qual é o nosso objetivo!
+<br>
+<br>
+<img width=300 src="https://github.com/fernandaagustoni/atividadePratica1Cap5DW1S5/blob/main/game.png"/>
+</p>
 </p>
 </body>
