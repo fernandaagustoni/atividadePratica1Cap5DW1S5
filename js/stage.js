@@ -80,6 +80,7 @@ var stageState = {
         this.blocks.enableBody = true;
         this.blockPositions = [];
 
+        //Construção labirinto
         for(var row in this.maze){
             for(var col in this.maze[row]){
                 var tile = this.maze[row][col];
@@ -127,6 +128,7 @@ var stageState = {
 		return value.toString();
 	},
 
+    //Função para verificação de colisão e se o player chegou a saída
     update: function(){
         if(this.onGame){
             game.physics.arcade.collide(this.player,this.blocks);    

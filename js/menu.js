@@ -20,7 +20,7 @@ var menuState = {
 
     },
 
-    //Inicia o jogo e mostra os labirintos de forma aleatória
+    //Inicia o jogo
     startGame: function(){
         game.state.start('stage');
     }
