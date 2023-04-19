@@ -5,6 +5,7 @@ var stageState = {
 
         game.add.sprite(0,0,'bg');
 
+        //Aleatorizar o labirinto
         var num = Math.floor(Math.random() * 4);
         console.log("Labirinto numero: " + num);
 
@@ -126,16 +127,14 @@ var stageState = {
 		return value.toString();
 	},
 
-
     update: function(){
         if(this.onGame){
-            game.physics.arcade.collide(this.player,this.blocks);
-            
+            game.physics.arcade.collide(this.player,this.blocks);    
 
             if(game.physics.arcade.overlap(this.player, this.coin, this.getEnd, null, this)){
                 this.coin.body.velocity.x = 120;
+                alert('Tempo: ' + this.time + ' segundos');
             }
-    
             this.movePlayer();
         }
     },
